@@ -9,9 +9,6 @@ const db = require('mod-db')
 //const request = require('request-promise-native')
 var bodyParser = require('body-parser')
 
-const multipart = require('connect-multiparty')
-const md_upload = multipart({ uploadDir: './uploads/product'})
-
 const fs = require('fs')
 const path = require('path')
 //
