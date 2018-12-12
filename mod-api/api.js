@@ -1318,53 +1318,6 @@ api.post('/crearHora', async (req, res) =>{
   res.send(result)
 })
 
-api.post('/guardarImagen', md_upload, async(req, res)=>{
-  const params = req.body
-  //const id = params.id
-
-  //console.log(id)
-
-  //console.log('-------------------archivo ini?-----------')
-  //console.log(params)
-  //console.log('-------------------archivo fin?-----------')
-  const fileName = 'no subido'
-
-  if(req.files){
-    console.log("existe el fichero")
-    const filePath = req.files.image.path
-    const fileSplit = filePath.split('\/')
-    const fileName = fileSplit[2]
-
-    const extSplit = fileName.split('\.')
-    const fileExt = extSplit[1]
- 
-    if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'jpeg' || fileExt == 'png'){
-      /*res.status(200).send({
-        filePath: filePath,
-        fileSplit: fileSplit,
-        fileName: fileName
-      })*/
-      res.send({nombre: fileName})
-    }
-    else{
-
-      fs.unlink(filePath)
-      res.status(200).send({message: 'extencion no valida'})
-    }
-    
-    // res.status(200).send({
-    //   filePath: filePath,
-    //   fileSplit: fileSplit,
-    //   fileName: fileName
-    // })
-     
-  }
-  else{
-    res.send('no se ha subido archivos')
-  }
-  //res.status(200).send({message: 'el usuario esiste'})
-
-})
 
 api.get('/mostrarImagen/:imageFile', async (req, res)=>{
   const imageFile = req.params.imageFile
