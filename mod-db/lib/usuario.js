@@ -31,7 +31,7 @@ module.exports = function setupUsuario (UsuarioModel) {
     return UsuarioModel.findAll()
   }
 
-  async function eliminarUno(usuarioId){ 
+  async function deleteOne(usuarioId){ 
     return await UsuarioModel.destroy({
       where:{ 
         id: usuarioId
@@ -44,6 +44,6 @@ module.exports = function setupUsuario (UsuarioModel) {
     update,
     findOne,
     findAll,
-    eliminarUno
+    deleteOne
   }
 }

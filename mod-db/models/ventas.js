@@ -7,7 +7,7 @@ module.exports = function setupVentasModel (config) {
   const sequelize = setupDatabase(config)
 
   return sequelize.define('ventas', {
-    pizzaTamaño: {
+    pizzaTamano: {
       type: Sequelize.STRING,
       allowNull: true
     },

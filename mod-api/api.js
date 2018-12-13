@@ -132,7 +132,7 @@ api.post('/ventasAdd',async (req,res)=>{
     const params = req.body   
       
       const Objeto = await Ventas.create(params.id,{
-        pizzaTamaño: params.tipo,
+        pizzaTamano: params.pizzaTamano,
         pizzaSabor: params.pizzaSabor,
         pizzaIngredientes: params.pizzaIngredientes,
         pizzaLlevarOMesa: params.pizzaLlevarOMesa,
