@@ -7,7 +7,7 @@ module.exports = function setupUsuarioModel (config) {
   const sequelize = setupDatabase(config)
 
   return sequelize.define('usuario', {
-    nombre: {
+    nombres: {
       type: Sequelize.STRING,
       allowNull: true
     },

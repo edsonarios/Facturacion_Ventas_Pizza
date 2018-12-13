@@ -1,11 +1,16 @@
 'use strict'
 
 module.exports = function setupVentas (VentasModel, UsuarioModel) {
-  async function create (agent) {
-    
+  async function create (id, objeto) {
+    const usuario = await UsuarioModel.findOne({
+      where: { id }
+    })
 
-    const result = await VentasModel.create(agent)
-    return result.toJSON()
+    if (usuario) {
+      Object.assign(objeto, { usuarioId: usuario.id })
+      const result = await VentasModel.create(objeto)
+      return result.toJSON()
+    }
   }
 
   async function update (id, ventas) {
