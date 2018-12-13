@@ -36,7 +36,7 @@ module.exports = function setupVentas (VentasModel, UsuarioModel) {
     return VentasModel.findAll()
   }
 
-  async function eliminarUno(id){ 
+  async function deleteOne(id){ 
     return await VentasModel.destroy({
       where:{ 
         id: id
@@ -49,6 +49,6 @@ module.exports = function setupVentas (VentasModel, UsuarioModel) {
     update,
     findOne,
     findAll,
-    eliminarUno
+    deleteOne
   }
 }

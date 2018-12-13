@@ -149,8 +149,8 @@ api.post('/ventasAdd',async (req,res)=>{
       //añade un nuevo usuario
       const params = req.body   
         
-      const Objeto = await Ventas.create(params.id,{
-        pizzaTamaño: params.tipo,
+      const Objeto = await Ventas.update(params.id,{
+        pizzaTamano: params.pizzaTamano,
         pizzaSabor: params.pizzaSabor,
         pizzaIngredientes: params.pizzaIngredientes,
         pizzaLlevarOMesa: params.pizzaLlevarOMesa,
