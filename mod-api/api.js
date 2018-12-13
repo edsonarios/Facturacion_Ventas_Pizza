@@ -131,14 +131,19 @@ api.post('/ventasAdd',async (req,res)=>{
     //añade un nuevo usuario
     const params = req.body   
       
+<<<<<<< HEAD
       const Objeto = await Ventas.create(params.id,{
+=======
+      const Objeto = await Ventas.create({
+>>>>>>> 845cc08928bbcf97d2e3651167fd36440374142e
         pizzaTamaño: params.pizzaTamaño,
         pizzaSabor: params.pizzaSabor,
         pizzaIngredientes: params.pizzaIngredientes,
         pizzaLlevarOMesa: params.pizzaLlevarOMesa,
         soda: params.soda,
         clienteNombre: params.clienteNombre,
-        clienteNitOci: params.clienteNitOci
+        clienteNitOci: params.clienteNitOci,
+        usuarioId:params.id
       })
    
     res.send(Objeto)
@@ -150,7 +155,7 @@ api.post('/ventasAdd',async (req,res)=>{
       const params = req.body   
         
       const Objeto = await Ventas.update(params.id,{
-        pizzaTamano: params.pizzaTamano,
+        pizzaTamaño: params.pizzaTamaño,
         pizzaSabor: params.pizzaSabor,
         pizzaIngredientes: params.pizzaIngredientes,
         pizzaLlevarOMesa: params.pizzaLlevarOMesa,
