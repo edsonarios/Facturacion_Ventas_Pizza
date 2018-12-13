@@ -44,7 +44,7 @@ api.post('/usuarioAdd',async (req,res)=>{
   const params = req.body   
     
     const Objeto = await Usuario.create({
-      nombres: params.nombres,
+      nombre: params.nombre,
       apellidos: params.apellidos,
       correo: params.correo,
       password: params.password,
